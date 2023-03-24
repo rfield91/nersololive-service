@@ -6,25 +6,8 @@ import ClassResultsGenerator from "./ClassResultsGenerator.js";
 import PaxResultsGenerator from "./PaxResultsGenerator.js";
 import ResultsUploader from "./ResultsUploader.js";
 import { exec } from "child_process";
+import { debounce } from "lodash-es";
 dotenv.config();
-//
-let fsWait = null;
-fs.watch(process.env.RESULTS_FILE_LOCATION, async (event, filename) => {
-    if (filename) {
-        if (fsWait)
-            return;
-        fsWait = setTimeout(() => {
-            fsWait = false;
-        }, 100);
-        try {
-            await processFile();
-        }
-        catch (err) {
-            consoleErrorBeep();
-            console.log(err);
-        }
-    }
-});
 function consoleErrorBeep() {
     exec("1..3 | %{ [console]::beep(1000, 500) }", {
         shell: "powershell.exe",
@@ -60,4 +43,15 @@ async function processFile() {
     if (!paxSuccess)
         consoleErrorBeep();
 }
+console.log("Watcher Starting...");
+fs.watch(process.env.RESULTS_FILE_LOCATION, debounce(async () => {
+    try {
+        await processFile();
+    }
+    catch (err) {
+        consoleErrorBeep();
+        console.log(err);
+    }
+}, 100));
+console.log("Watcher Started...");
 //# sourceMappingURL=index.js.map

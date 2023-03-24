@@ -29,7 +29,8 @@ class ResultsHTMLParser {
                 let totalCones = 0;
                 let dnfCount = 0;
                 for (var i = 8; i <= 15; i++) {
-                    const child = entryData[i].childNodes[0];
+                    // const child = entryData[i].childNodes[0];
+                    const child = entryData[i];
                     const runNumber = i - 7;
                     let timeString = "";
                     let timeValue = 0.0;
@@ -37,14 +38,15 @@ class ResultsHTMLParser {
                     let coneCount = 0;
                     let status = "CLEAN";
                     // Non-run
-                    if (child === undefined)
+                    if (child.childNodes.length == 0)
                         continue;
                     // Non-best
-                    if (child.nodeType == 3) {
+                    if (child.childNodes.length == 1 &&
+                        child.childNodes[0].nodeType == 3) {
                         timeString = child.text.trim();
                     }
-                    else {
-                        timeString = child.childNodes[0].text.trim();
+                    else if (child.childNodes.length == 3) {
+                        timeString = child.childNodes[1].text.trim();
                         isBest = true;
                     }
                     // Determine cone count/run status
