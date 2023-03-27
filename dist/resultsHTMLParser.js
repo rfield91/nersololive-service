@@ -1,54 +1,45 @@
-import { parse } from "node-html-parser";
+import { parse as htmlParser } from "node-html-parser";
 import { Result, Run, RunInfo } from "./type.js";
 class ResultsHTMLParser {
     constructor(htmlContent) {
         this.htmlContent = htmlContent;
     }
     parse() {
-        const root = parse(this.htmlContent, {
-            blockTextElements: {
-                style: false,
-            },
-        });
-        const tableRows = root.querySelectorAll("table:last-child tr:not(:first-child)");
+        const tableRows = this.htmlContent.match(/<tr[\s\S]*?<\/tr>/g);
         const classResults = [];
         tableRows.forEach((row) => {
-            const entryData = row.childNodes.filter((element) => element.nodeType == 1);
-            if (entryData.length > 1) {
-                const position = entryData[0].text.trim();
-                const paxPosition = parseInt(entryData[7].text.trim());
-                const name = entryData[3].text.trim();
-                const carClass = entryData[1].text.trim().toUpperCase();
-                const number = parseInt(entryData[2].text.trim());
-                const car = entryData[4].text.trim();
-                const color = entryData[5].text.trim();
+            const entryData = row.match(/<td[\s\S]*?<\/td>/g);
+            if (entryData != null && entryData.length == 18) {
+                console.log("-------------------------");
+                const rowData = [];
+                entryData.forEach((column) => {
+                    const c = htmlParser.parse(column);
+                    rowData.push(c);
+                });
+                const position = rowData[0].text.trim();
+                const paxPosition = parseInt(rowData[7].text.trim());
+                const name = rowData[3].text.trim();
+                const carClass = rowData[1].text.trim().toUpperCase();
+                const number = parseInt(rowData[2].text.trim());
+                const car = rowData[4].text.trim();
+                const color = rowData[5].text.trim();
                 // diff
                 // parseFloat(entryData[17].text.trim()
-                const classResult = new Result(car, carClass, color, name, number, position, paxPosition, new RunInfo(parseFloat(entryData[16].text.trim()), parseFloat(entryData[6].text.trim())));
+                const classResult = new Result(car, carClass, color, name, number, position, paxPosition, new RunInfo(parseFloat(rowData[16].text.trim()), parseFloat(rowData[6].text.trim())));
                 let cleanCount = 0;
                 let totalCones = 0;
                 let dnfCount = 0;
                 for (var i = 8; i <= 15; i++) {
-                    // const child = entryData[i].childNodes[0];
-                    const child = entryData[i];
+                    const run = rowData[i];
+                    let timeString = run.innerText.trim();
+                    // no time/didn't take the run
+                    if (timeString.length == 0)
+                        continue;
+                    let isBest = run.innerHTML.includes("bestt");
                     const runNumber = i - 7;
-                    let timeString = "";
                     let timeValue = 0.0;
-                    let isBest = false;
                     let coneCount = 0;
                     let status = "CLEAN";
-                    // Non-run
-                    if (child.childNodes.length == 0)
-                        continue;
-                    // Non-best
-                    if (child.childNodes.length == 1 &&
-                        child.childNodes[0].nodeType == 3) {
-                        timeString = child.text.trim();
-                    }
-                    else if (child.childNodes.length == 3) {
-                        timeString = child.childNodes[1].text.trim();
-                        isBest = true;
-                    }
                     // Determine cone count/run status
                     var splitRunData = timeString.split("+");
                     // No time for some reason
@@ -75,6 +66,7 @@ class ResultsHTMLParser {
                 classResult.runInfo.cleanCount = cleanCount;
                 classResult.runInfo.coneCount = totalCones;
                 classResult.runInfo.dnfCount = dnfCount;
+                console.log(classResult.runInfo);
                 classResults.push(classResult);
             }
         });
