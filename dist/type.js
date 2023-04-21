@@ -25,8 +25,9 @@ export class RunInfo {
     }
 }
 export class Result {
-    constructor(car, carClass, color, name, number, position, paxPosition, runInfo) {
+    constructor(car, carClassGroup, carClass, color, name, number, position, paxPosition, runInfo) {
         this.car = car;
+        this.carClassGroup = carClassGroup;
         this.carClass = carClass;
         this.color = color;
         this.name = name;

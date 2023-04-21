@@ -4,7 +4,7 @@ class ClassResultsGenerator {
         this.results = results;
     }
     transform() {
-        const classResults = _.groupBy(this.results, "carClass");
+        const classResults = _.groupBy(this.results, "carClassGroup");
         var keys = Object.keys(classResults);
         keys.forEach((key) => {
             classResults[key].forEach((entry, index) => {
