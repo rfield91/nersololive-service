@@ -9,7 +9,7 @@ class ClassResultsGenerator {
     }
 
     transform(): ClassResults {
-        const classResults = _.groupBy(this.results, "carClass");
+        const classResults = _.groupBy(this.results, "carClassGroup");
 
         var keys = Object.keys(classResults);
 

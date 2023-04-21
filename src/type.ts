@@ -44,6 +44,7 @@ export class RunInfo {
 
 export class Result {
     car: string;
+    carClassGroup: string;
     carClass: string;
     color: string;
     name: string;
@@ -54,6 +55,7 @@ export class Result {
 
     constructor(
         car: string,
+        carClassGroup: string,
         carClass: string,
         color: string,
         name: string,
@@ -63,6 +65,7 @@ export class Result {
         runInfo: RunInfo
     ) {
         this.car = car;
+        this.carClassGroup = carClassGroup;
         this.carClass = carClass;
         this.color = color;
         this.name = name;
