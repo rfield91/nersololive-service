@@ -75,6 +75,30 @@ export class Result {
         this.runInfo = runInfo;
     }
 }
+export interface EntryInfo {
+    name: string;
+    carClass: string;
+    number: number;
+    car: string;
+    color: string;
+}
+
+export interface ResultSummary {
+    position: number;
+    entryInfo: EntryInfo;
+    toFirst: number;
+    toNext: number;
+}
+
+export interface RawResult extends ResultSummary {
+    total: number;
+    time: number;
+    coneCount: number;
+}
+
+export interface PaxResult extends ResultSummary {
+    paxTime: number;
+}
 
 export type ClassResults = {
     results: { [name: string]: Result[] };
