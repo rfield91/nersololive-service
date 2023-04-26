@@ -1,3 +1,4 @@
+import { Console } from "console";
 import { parse as htmlParser } from "node-html-parser";
 import { Result, Run, RunInfo } from "./type.js";
 
@@ -34,6 +35,8 @@ class ResultsHTMLParser {
                 const number = parseInt(rowData[2].text.trim());
                 const car = rowData[4].text.trim();
                 const color = rowData[5].text.trim();
+
+                console.log(`Name: ${name}`);
 
                 const indexClasses = ["N", "P"];
 
@@ -106,7 +109,6 @@ class ResultsHTMLParser {
                 classResult.runInfo.coneCount = totalCones;
                 classResult.runInfo.dnfCount = dnfCount;
 
-                console.log(classResult.runInfo);
                 classResults.push(classResult);
             }
         });

@@ -23,6 +23,7 @@ class ResultsHTMLParser {
                 const number = parseInt(rowData[2].text.trim());
                 const car = rowData[4].text.trim();
                 const color = rowData[5].text.trim();
+                console.log(`Name: ${name}`);
                 const indexClasses = ["N", "P"];
                 // const isIndexClass = carClass[0] == "N" || carClass[0] == "P";
                 const isIndexClass = indexClasses.includes(carClass[0]);
@@ -68,7 +69,6 @@ class ResultsHTMLParser {
                 classResult.runInfo.cleanCount = cleanCount;
                 classResult.runInfo.coneCount = totalCones;
                 classResult.runInfo.dnfCount = dnfCount;
-                console.log(classResult.runInfo);
                 classResults.push(classResult);
             }
         });
