@@ -1,0 +1,1 @@
+{"version":3,"file":"ConsoleErrorBeep.js","sourceRoot":"","sources":["../src/ConsoleErrorBeep.ts"],"names":[],"mappings":"AAAA,OAAO,EAAE,IAAI,EAAE,MAAM,eAAe,CAAC;AAErC,MAAM,gBAAgB,GAAG,GAAG,EAAE;IAC1B,IAAI,CAAC,wCAAwC,EAAE;QAC3C,KAAK,EAAE,gBAAgB;KAC1B,CAAC,CAAC;AACP,CAAC,CAAC;AAEF,eAAe,gBAAgB,CAAC"}
