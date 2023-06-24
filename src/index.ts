@@ -9,9 +9,15 @@ dotenv.config();
 
 console.log("Importing Heat Assignments");
 
-workRunHandler();
+await workRunHandler();
 
 console.log("Done importing Heat Assignemnts");
+
+console.log("Initial results read");
+
+await liveResultsHandler();
+
+console.log("Done initial results read");
 
 console.log("Watcher Starting...");
 
