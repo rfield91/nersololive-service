@@ -61,7 +61,8 @@ class ResultsHTMLParser {
                 let dnfCount = 0;
 
                 for(let i = 8; i < (columns.length - 2); i++){
-                    const col = `Run ${i - 7}` 
+                    const runNumber = i - 7;
+                    const col = `Run ${runNumber}` 
                     const runStr = d[col][1].trim()
 
                     //no time
@@ -98,7 +99,7 @@ class ResultsHTMLParser {
                     }
 
                     classResult.runInfo.addRun(
-                        new Run(i + 1, status, timeValue, coneCount, isBest)
+                        new Run(runNumber, status, timeValue, coneCount, isBest)
                     );
                 }
 
