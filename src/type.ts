@@ -158,4 +158,5 @@ export const classList = [
     "FSAE",
     "KM",
     "P",
+    "M",
 ];
