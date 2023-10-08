@@ -38,7 +38,7 @@ class ResultsHTMLParser {
 
                 console.log(`Name: ${name}`);
 
-                const indexClasses = ["N", "P"];
+                const indexClasses = ["N", "P", "M"];
 
                 // const isIndexClass = carClass[0] == "N" || carClass[0] == "P";
                 const isIndexClass = indexClasses.includes(carClass[0]);
