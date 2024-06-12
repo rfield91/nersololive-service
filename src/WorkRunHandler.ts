@@ -2,7 +2,8 @@ import { promises as fs } from "fs";
 import { parse as htmlParser } from "node-html-parser";
 import ResultsUploader from "./ResultsUploader.js";
 import consoleErrorBeep from "./ConsoleErrorBeep.js";
-import { classList } from "./type.js";
+import ClassDefs from "./ClassDefsParser.js";
+import { defaultClassList } from "./type.js";
 
 const workRunHandler = async () => {
     let classes = buildInitialClassList();
@@ -26,7 +27,14 @@ const workRunHandler = async () => {
             const classList = getClassList(rowData[2].text.trim());
 
             classList.forEach((c) => {
-                classes[c].run = heatNumber;
+                try{
+                    classes[c].run = heatNumber;
+                }
+                catch (error){
+                    //ignore errors where classes in event are not defined
+                    //in previously read/hardcoded class definitions
+                    console.log(`Unable to set run heat for class ${c}`);
+                }
             });
 
             numberOfHeats++;
@@ -45,7 +53,14 @@ const workRunHandler = async () => {
             const classList = getClassList(rowData[1].text.trim());
 
             classList.forEach((c) => {
-                classes[c].work = heatNumber;
+                try{
+                    classes[c].work = heatNumber;
+                }
+                catch (error){
+                    //ignore errors where classes in event are not defined
+                    //in previously read/hardcoded class definitions
+                    console.log(`Unable to set work heat for class ${c}`);
+                }
             });
         }
     });
@@ -116,7 +131,18 @@ const getClassList = (classString: string) => {
 
 const buildInitialClassList = () => {
     const classes = {};
+    var classList;
 
+    try {
+        console.log("Trying to read class definitions");
+        const classdefs = new ClassDefs(process.env.CLASSDEFS_FILE_LOCATION);
+        classList = classdefs.classes
+    } catch (error) {
+        //default to hardcoded class list if unable to parse class definition
+        console.log("Unable to read class definitions, using defaults");
+        classList = defaultClassList;
+    }
+    
     classList.forEach((c) => {
         classes[c] = {
             run: -1,

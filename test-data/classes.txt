@@ -1,0 +1,99 @@
+ss	0.835	1	Super Street				Street		
+as	0.824	2	A Street				Street		
+bs	0.818	1	B Street				Street		
+cs	0.813	1	C Street				Street		
+ds	0.810	1	D Street				Street		
+es	0.792	1	E Street				Street		
+fs	0.814	1	F Street				Street		
+gs	0.796	2	G Street				Street		
+hs	0.786	1	H Street				Street		
+hcs	0.793	-1	Heritage Classic Street				Heritage Street		
+ssc	0.805	1	Spec Sport Coupe				Special		
+sth	0.812	2	Street Touring H				Touring		
+sts	0.816	1	Street Touring S				Touring		
+stx	0.819	2	Street Touring X				Touring		
+str	0.832	2	Street Touring R				Touring		
+stu	0.833	1	Street Touring U				Touring		
+sst	0.836	-1	Super Street T				Touring		
+ssp	0.857	2	S Street Prepared				Street Prepared		
+csp	0.860	1	C Street Prepared				Street Prepared		
+dsp	0.847	2	D Street Prepared				Street Prepared		
+esp	0.840	2	E Street Prepared				Street Prepared		
+fsp	0.831	2	F Street Prepared				Street Prepared		
+camt	0.820	2	Classic American T				Classic American		
+camc	0.826	1	Classic American C				Classic American		
+cams	0.848	2	Classic American S				Classic American		
+xa	0.842	2	Xtreme Street A				Xtreme Street		
+xb	0.849	2	Xtreme Street B				Xtreme Street		
+xu	0.870	2	Xtreme Street U				Xtreme Street		
+evx	0.830	2	Electric				Electric		
+xp	0.887	1	X Prepared				Prepared		
+cp	0.856	-1	C Prepared				Prepared		
+dp	0.865	1	D Prepared				Prepared		
+ep	0.858	2	E Prepared				Prepared		
+fp	0.877	2	F Prepared				Prepared		
+hcr	0.815	-1	Heritage Classic Race				Heritage Race		
+smf	0.850	2	Street Modified F				Street Modified		
+sm	0.868	2	Street Modified				Street Modified		
+ssm	0.879	2	Super Street Modified				Street Modified		
+csx	0.811	2	Spec MX-5				MX5		
+csm	0.808	1	Club Spec Mustang				Club Spec		
+am	1.000	2	A Modified				Modified		
+bm	0.978	2	B Modified				Modified		
+cm	0.898	2	C Modified				Modified		
+dm	0.904	-1	D Modified				Modified		
+em	0.910	-1	E Modified				Modified		
+fm	0.917	-1	F Modified				Modified		
+fsae	0.980	-1	Formula SAE				Formula		
+km	0.937	1	F125 Shifter Kart				Kart		
+ssl	0.835	-1	Super Street Ladies				Street Ladies		
+asl	0.824	1	A Street Ladies				Street Ladies		
+bsl	0.818	1	B Street Ladies				Street Ladies		
+csl	0.813	1	C Street Ladies				Street Ladies		
+dsl	0.810	-1	D Street Ladies				Street Ladies		
+esl	0.792	1	E Street Ladies				Street Ladies		
+fsl	0.814	1	F Street Ladies				Street Ladies		
+gsl	0.796	1	G Street Ladies				Street Ladies		
+hsl	0.786	1	H Street Ladies				Street Ladies		
+hcsl	0.793	-1	Heritage Classic Street Ladies				Heritage Street Ladies		
+sscl	0.805	-1	Spec Sport Coupe Ladies				Special Ladies		
+sthl	0.812	1	Street Touring H Ladies				Touring Ladies		
+stsl	0.816	2	Street Touring S Ladies				Touring Ladies		
+stxl	0.819	1	Street Touring X Ladies				Touring Ladies		
+strl	0.832	1	Street Touring R Ladies				Touring Ladies		
+stul	0.833	1	Street Touring U Ladies				Touring Ladies		
+sstl	0.836	1	Super Street T Ladies				Touring Ladies		
+sspl	0.857	-1	S Street Prepared Ladies				Street Prepared Ladies		
+cspl	0.860	2	C Street Prepared Ladies				Street Prepared Ladies		
+dspl	0.847	2	D Street Prepared Ladies				Street Prepared Ladies		
+espl	0.840	2	E Street Prepared Ladies				Street Prepared Ladies		
+fspl	0.831	2	F Street Prepared Ladies				Street Prepared Ladies		
+camtl	0.820	2	Classic American T Ladies				Classic American Ladies		
+camcl	0.826	2	Classic American C Ladies				Classic American Ladies		
+camsl	0.848	-1	Classic American S Ladies				Classic American Ladies		
+xal	0.842	2	Xtreme Street A Ladies				Xtreme Street Ladies		
+xbl	0.849	2	Xtreme Street B Ladies				Xtreme Street Ladies		
+xul	0.870	2	Xtreme Street U Ladies				Xtreme Street Ladies		
+evxl	0.830	2	Electric Ladies				Electric Ladies		
+xpl	0.887	2	X Prepared Ladies				Prepared Ladies		
+cpl	0.856	-1	C Prepared Ladies				Prepared Ladies		
+dpl	0.865	-1	D Prepared Ladies				Prepared Ladies		
+epl	0.858	-1	E Prepared Ladies				Prepared Ladies		
+fpl	0.877	1	F Prepared Ladies				Prepared Ladies		
+hcrl	0.815	-1	Heritage Classic Race Ladies				Heritage Race Ladies		
+smfl	0.850	2	Street Modified F Ladies				Street Modified Ladies		
+sml	0.868	2	Street Modified Ladies				Street Modified Ladies		
+ssml	0.879	2	Super Street Modified Ladies				Street Modified Ladies		
+csxl	0.811	-1	Spec MX-5 Ladies				MX5 Ladies		
+csml	0.808	-1	Club Spec Mustang Ladies				Club Spec Ladies		
+aml	1.000	2	A Modified Ladies				Modified Ladies		
+bml	0.978	2	B Modified Ladies				Modified Ladies		
+cml	0.898	2	C Modified Ladies				Modified Ladies		
+dml	0.904	-1	D Modified Ladies				Modified Ladies		
+eml	0.910	-1	E Modified Ladies				Modified Ladies		
+fml	0.917	-1	F Modified Ladies				Modified Ladies		
+fsael	0.980	-1	Formula SAE Ladies				Formula Ladies		
+kml	0.937	1	F125 Shifter Kart Ladies				Kart Ladies		
+n	0.000	-10	Novice	pax			Novice		
+t	0.000	-10	Street Tire Class	pax			Street Tire Class		
+p	0.000	2	Pro Class	pax			Pro Class		
