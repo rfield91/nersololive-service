@@ -109,7 +109,7 @@ export type AzureBlobConfiguration = {
     containerName: string;
 };
 
-export const classList = [
+export const defaultClassList = [
     "SS",
     "AS",
     "BS",
